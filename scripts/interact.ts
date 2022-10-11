@@ -8,13 +8,7 @@ async function main() {
   await ifo.deployed();
 
   console.log(`IFO deployed to ${ifo.address}`);
-
-  const Energy = await ethers.getContractFactory("Energy");
-  const energy = await Energy.deploy();
-
-  await energy.deployed();
-
-  console.log(`IFO deployed to ${energy.address}`);  
+  const contract = ethers.
 }
 
 // We recommend this pattern to be able to use async/await everywhere

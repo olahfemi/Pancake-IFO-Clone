@@ -14,7 +14,7 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
  */
 contract IFO is ReentrancyGuard, Initializable {
     using SafeMath for uint256;
-    using SafeBEP20 for IBEP20;
+    using SafeERC20 for IERC20;
 
     // Info of each user.
     struct UserInfo {
@@ -25,9 +25,9 @@ contract IFO is ReentrancyGuard, Initializable {
     // admin address
     address public adminAddress;
     // The raising token
-    IBEP20 public lpToken;
+    IERC20 public lpToken;
     // The offering token
-    IBEP20 public offeringToken;
+    IERC20 public offeringToken;
     // The block number when IFO starts
     uint256 public startBlock;
     // The block number when IFO ends
@@ -49,8 +49,8 @@ contract IFO is ReentrancyGuard, Initializable {
     constructor() public {}
 
     function initialize(
-        IBEP20 _lpToken,
-        IBEP20 _offeringToken,
+        IERC20 _lpToken,
+        IERC20 _offeringToken,
         uint256 _startBlock,
         uint256 _endBlock,
         uint256 _offeringAmount,
